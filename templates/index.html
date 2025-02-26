@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Tracker</title>
+</head>
+<body>
+    <h1>Birthday List</h1>
+    <ul>
+        {% for birthday in birthdays %}
+            <li>{{ birthday.name }} - {{ birthday.date }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Add New Birthday</h2>
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="date" name="date" required>
+        <button type="submit">Add Birthday</button>
+    </form>
+</body>
+</html>
